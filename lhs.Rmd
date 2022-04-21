@@ -1,0 +1,45 @@
+---
+title: "Assignment LHS"
+author: "Connor Flynn"
+date: "4/21/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+```
+
+
+```{r}
+source(here("atm_conduct_function.R"))
+```
+
+
+```{r}
+atm_conduct(vm = 20, zm = 100, h = 10)
+```
+
+
+```{r}
+deviation_height = 50
+nsamples = 22
+wind_speed_distribution = rnorm(mean = 250,
+              sd = 30,
+              n = nsamples)
+veg_height = runif(min = h - deviation_height,
+              max = h + deviation_height,
+              n = nsamples)
+
+
+
+parameters = cbind.data.frame(wind_speed_distribution, veg_height)
+Cat_sensitivity = parameters %>%
+  pmap(~atm_conduct(vm = wind_speed_distribution, h=veg_height))
+
+```
+
+```{r}
+
+```
+
