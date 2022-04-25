@@ -2,7 +2,9 @@
 title: "Assignment LHS"
 author: "Connor Flynn"
 date: "4/21/2022"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -22,12 +24,6 @@ library(pse)
 source(here("atm_conduct_function.R"))
 ```
 
-
-```{r}
-#atm_conduct(vm = 20, zm = 100, h = 10)
-
-atm_conduct(vm = 20, h = 10)
-```
 
 ## Question 2:
 ```{r}
@@ -63,27 +59,6 @@ mean(conductance_df$Cat)
 
 
 ## Question 3: 
-```{r}
-kd <- 0.7
-k0 <- 0.1
-deviation <- 0.01
-# 
-# wind_speed_distribution = rnorm(mean = 250,
-#               sd = 30,
-#               n = nsamples)
-# 
-# veg_height <- runif(min = 950,
-#               max = 1050,
-#               n = nsamples)
-# 
-# kd_dist <- runif(min = kd-deviation*kd,
-#               max = kd+deviation*kd, 
-#               n = 22)
-#   
-# k0_dist <- runif(min = k0-deviation*k0,
-#               max = k0+deviation*k0, 
-#               n = 22)
-```
 
 ### Part a:
 ```{r}
@@ -155,9 +130,16 @@ pse::plotscatter(sens_conduct, col="blue", cex=5)
 ### Part e:
 ```{r}
 # estimate the Partial Rank Correlation Coefficients
+
+#plot
 pse::plotprcc(sens_conduct)
+```
+
+```{r}
+#PRCC values for parameters
 sens_conduct$prcc
 ```
 
+
 ### Part f:
-When analyzing parameter sensitivity, our results indicate that wind speed is the greatest indicator of aerodynamic conductance. Thus, to reduce uncertainty in aerodymaic conductance estimates, one should focus on wind speed.
+When analyzing parameter sensitivity, our results indicate that wind speed is the greatest indicator of aerodynamic conductance. Thus, to reduce uncertainty in aerodynamic conductance estimates, one should focus on wind speed. There is evidence that climate change is increasing average wind speeds. Therefore, as our model suggests, atmospheric conductance will also increase with higher wind speeds. Thus, plants will lose more water due to this increased atmospheric conductance, and will be more sensitive to water use.
