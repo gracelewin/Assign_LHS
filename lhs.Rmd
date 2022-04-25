@@ -62,6 +62,10 @@ mean(conductance_df$Cat)
 
 ### Part a:
 ```{r}
+kd <- 0.7
+k0 <- 0.1
+deviation <- 0.01
+
 #parameters
 factors = c("kd", "k0", "vm", "h")
 
