@@ -1,6 +1,6 @@
 ---
 title: "Assignment LHS"
-author: "Connor Flynn"
+author: "Connor Flynn, Roshni Katrak-Adefowora, and Grace Lewin"
 date: "4/21/2022"
 output:
   pdf_document: default
