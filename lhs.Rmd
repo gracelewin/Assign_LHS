@@ -25,6 +25,7 @@ source(here("atm_conduct_function.R"))
 ```
 
 
+
 ## Question 2:
 ```{r}
 #parameters
@@ -109,12 +110,12 @@ sens_conduct = pse::tell(sens_conduct, t(as.matrix(conductance_df)),
 ```
 
 ### Part c:
-```{r}
+```{r, fig.cap="This is the range of atmospheric conductance for the inputted parameters. This shows the conductance estimates in a way that accounts for parameter uncertainty."}
 # Plot conductance estimates accounting for parameter uncertainty
 
 ggplot(conductance_df, aes(x=factor(0), y=Cat))+
   geom_boxplot()+
-  labs(y="Atmospheric Conductance",
+  labs(y="Atmospheric Conductance (cm/s)",
        x = NULL,
        title = "Atmospheric Conductance Range")+
   theme_bw()+
@@ -124,7 +125,7 @@ ggplot(conductance_df, aes(x=factor(0), y=Cat))+
 ```
 
 ### Part d:
-```{r}
+```{r, fig.cap="These are the plotted conductance estimates against each of the parameters."}
 #Plot conductance estimates against each parameter
 
 # now we use built in LHS functions to analyze parameter sensitivity
@@ -132,7 +133,7 @@ pse::plotscatter(sens_conduct, col="blue", cex=5)
 ```
 
 ### Part e:
-```{r}
+```{r, fig.cap="Partial Rank Correlation Coefficients for the parameters kd, k0, vm (windspeed), and h (vegetation height)."}
 # estimate the Partial Rank Correlation Coefficients
 
 #plot

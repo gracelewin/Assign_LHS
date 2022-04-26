@@ -1,4 +1,4 @@
-#' Atmospheric Conductance Function
+#' Atmospheric Conductance
 #' 
 #' This function computes atmospheric conductance. This refers to how easily water diffuses into the air and depends largely on wind speed.
 #' 
@@ -6,6 +6,9 @@
 #' @param k0 coefficient
 #' @param vm wind speed (cm/s)
 #' @param h vegetation height (cm)
+#' 
+#' @author Roshni Katrak-Adefowora, Grace Lewin, Connor Flynn
+#' @return Atmospheric conductance (cm/s)
 
 atm_conduct <- function(kd = 0.7, k0 = 0.1, vm, h) {
   zd = kd*h
